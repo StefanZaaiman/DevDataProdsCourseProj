@@ -29,8 +29,8 @@ Stefan Zaaiman
 
 ## App overview
 
-* This presentation accompanies the app which can be found [here](https://stefanzaaimanapps.shinyapps.io/stefanapp).
-* The source code for the app and this slidify presentation can be found [here](https://github.com/StefanZaaiman/DevDataProdsCourseProj). 
+* This presentation accompanies the app which can be found [here](https://stefanzaaimanapps.shinyapps.io/stefanapp) (right-click and open in new tab).
+* The source code for the app and this slidify presentation can be found [here](https://github.com/StefanZaaiman/DevDataProdsCourseProj) (right-click and open in new tab). 
 * The user can select any of 3 variables from the mtcars dataset: displacement, weight and quarter mile time.
 * The app then automatically conducts a linear regression of this selected variable against mile per gallon.
 * The app presents the results of the linear regression as a scatterplot of the predictor (user-selected) and response (mpg) variables, with the fitted linear regression line also plotted on the graph.
