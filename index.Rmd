@@ -1,0 +1,74 @@
+---
+title       : Developing Data Products Course Project
+subtitle    : Linear regression on the mtcars dataset
+author      : Stefan Zaaiman
+job         : Super duper data scientist
+framework   : revealjs        # {io2012, html5slides, shower, dzslides, ...}
+revealjs:
+   theme: default
+   center: "true"
+   transition: concave
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : default      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : standalone # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Linear regression on the mtcars dataset
+
+Johns Hopkins University
+
+Bloomberg School of Public Health
+
+Developing Data Products Course Project
+
+Stefan Zaaiman
+
+---
+
+## App overview
+
+* This presentation accompanies the app which can be found [here](https://stefanzaaimanapps.shinyapps.io/stefanapp).
+* The source code for the app and this slidify presentation can be found [here](https://github.com/StefanZaaiman/DevDataProdsCourseProj). 
+* The user can select any of 3 variables from the mtcars dataset: displacement, weight and quarter mile time.
+* The app then automatically conducts a linear regression of this selected variable against mile per gallon.
+* The app presents the results of the linear regression as a scatterplot of the predictor (user-selected) and response (mpg) variables, with the fitted linear regression line also plotted on the graph.
+* The following 3 slides shows these three graphs (each of these are generated on the fly with R code).
+
+---
+
+## Graph of Displacement vs MPG regression
+
+```{r, echo=FALSE}
+library(datasets)
+data(mtcars)
+names(mtcars) = c("mpg", "cyl", "Displacement", "hp", "drat", "Weight", "QuartermileTime", "vs", "am", "gear", "carb")
+plot(mtcars$Displacement, mtcars$mpg, main = "Regression of Displacement and MPG", xlab="Displacement", ylab = "MPG")
+abline(lm(mpg~Displacement, data = mtcars))
+```
+
+---
+
+## Graph of Weight vs MPG regression
+
+```{r, echo=FALSE}
+library(datasets)
+data(mtcars)
+names(mtcars) = c("mpg", "cyl", "Displacement", "hp", "drat", "Weight", "QuartermileTime", "vs", "am", "gear", "carb")
+plot(mtcars$Weight, mtcars$mpg, main = "Regression of Weight and MPG", xlab="Weight", ylab = "MPG")
+abline(lm(mpg~Weight, data = mtcars))
+```
+
+---
+
+## Graph of Quartermile Time vs MPG regression
+
+```{r, echo=FALSE}
+library(datasets)
+data(mtcars)
+names(mtcars) = c("mpg", "cyl", "Displacement", "hp", "drat", "Weight", "QuartermileTime", "vs", "am", "gear", "carb")
+plot(mtcars$QuartermileTime, mtcars$mpg, main = "Regression of Quartermile Time and MPG", xlab="Quartermile Time", ylab = "MPG")
+abline(lm(mpg~QuartermileTime, data = mtcars))
+```
+
